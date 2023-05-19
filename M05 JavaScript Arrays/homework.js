@@ -159,7 +159,7 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   for (var i = 0; i < array.length; i++) {
+   for (var i = 1; i < array.length; i++) {
         if(array[i]!=array[0]){
             return(false);
         } else{
@@ -173,6 +173,24 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var meses=["Enero","Marzo","Noviembre"];
+   var resultado=[];
+   for(var i=0;i<array.length;i++){
+      var consulta = array[i];
+//      console.log(consulta);
+      var check =meses.includes(consulta);
+ //     console.log(check);
+      if(check==true){
+         resultado.push(consulta);
+      }
+   }
+   if(meses.length===resultado.length){
+       console.log(resultado);
+       return(resultado);
+   } else {
+       console.log("No se encontraron los meses pedidos");
+       return("No se encontraron los meses pedidos");
+   }
 }
 
 function tablaDelSeis() {
@@ -180,7 +198,7 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    var multiplicacion = [];
-   for(var i=0;i<10;i++){
+   for(var i=0;i<=10;i++){
       var ahora = i;
       var valor=(6 * ahora);
       multiplicacion.push(valor);
@@ -192,8 +210,15 @@ function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var centena = [];
+   for(var i=0;i<array.length;i++){
+      if(array[i]>100 && array[i]<=200){
+         var valor = array[i];
+         centena.push(valor);
+      }
+   }
+   return(centena);
 }
-
 /* ----------------------------------------------------------------------------------
 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
 -------------------------------------------------------------------------------------*/
@@ -205,6 +230,18 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var resultado = num;
+   var arrayResultado = [];
+
+   for(var i=0;i<10;i++){
+      resultado = resultado +2;
+      if(resultado==i){
+         return("Se interrumpió la ejecución");
+      } else {
+         arrayResultado.push(resultado);
+      }
+   }
+   return(arrayResultado);
 }
 
 function continueStatement(num) {
@@ -214,6 +251,18 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var resultado = num;
+   var resultadoFinal=[];
+   for(var i=0;i<10;i++){
+      if(i==5){
+         continue;
+      } else {
+         resultado = resultado + 2;
+         resultadoFinal.push(resultado);
+      }
+   }
+   console.log(resultadoFinal);
+   return(resultadoFinal);
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
